@@ -1,0 +1,9 @@
+/* Custom Styles */
+
+h1#gametitle {
+	text-align: center;
+}
+
+canvas {
+	background-color: #444;
+}
