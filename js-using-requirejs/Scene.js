@@ -3,6 +3,11 @@ define([],
     function(){
         function Scene(){
             this.gameObjects = [];
+            this.initialize = function()
+            {
+                // initialization logic
+                // console.log("base initialize");
+            }
             this.update = function(){
                 for(go in this.gameObjects){
                     if (this.gameObjects[go].update) this.gameObjects[go].update();

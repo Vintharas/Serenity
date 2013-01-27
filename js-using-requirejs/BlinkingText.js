@@ -10,7 +10,7 @@ define([],
             this.blinkingPeriod = blinkingPeriod;
             this.lastBlink = (new Date()).getTime();
             this.currentAlpha = 1;
-            this.isFadingOut = true
+            this.isFadingOut = true;
             this.update = function(){
                 var currentTime = (new Date()).getTime();
                 var timePassedSinceLastBlink = currentTime - this.lastBlink;
