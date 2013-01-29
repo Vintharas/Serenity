@@ -11,7 +11,9 @@ define(["Scene", "SolidBackground", "Text", "BlinkingText", "AnimatedSprite"],
                 var randomY = (Math.random()*(-1600)) + 800;
                 var randomOpacity = Math.random();
                 var randomSpeedY = (randomOpacity*1.5); // far stars move slower
-                var star = new AnimatedSprite("img/star-animated.png", {x: randomX, y: randomY} , {x:0, y:randomSpeedY}, randomOpacity, 16, 16, 8, .4);
+                var numberOfColumnsInSprite = 8;
+                var randomSpriteNumber = Math.round(Math.random()*(numberOfColumnsInSprite-1));
+                var star = new AnimatedSprite("img/star-animated.png", {x: randomX, y: randomY} , {x:0, y:randomSpeedY}, randomOpacity, 16, 16, numberOfColumnsInSprite, .4, randomSpriteNumber);
                 that.stars.push(star);
                 that.gameObjects.push(star);
             };

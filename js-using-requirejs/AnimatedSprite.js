@@ -2,7 +2,7 @@
 // The animated sprite is contained in an image that contains a 1xN matrix of animated images
 define([],
     function(){
-        function AnimatedSprite(imageSource, position, speed, opacity, width, height, numberOfColumns, animationSpeed){
+        function AnimatedSprite(imageSource, position, speed, opacity, width, height, numberOfColumns, animationSpeed, firstSprite){
             this.x = position.x;
             this.y = position.y;
             this.speed = speed;
@@ -12,7 +12,7 @@ define([],
             this.width = width;
             this.height = height;
             this.numberOfColumns = numberOfColumns;
-            this.currentColumn = 0;
+            this.currentColumn = firstSprite === undefined ? 0 : firstSprite;
             if (animationSpeed) this.animationSpeed = animationSpeed;
             else this.animationSpeed = 1;
             this.animationCounterMax = 1/this.animationSpeed;
