@@ -1,9 +1,9 @@
 // TitleScene.js
-define(["Scene", "SolidBackground", "Text", "BlinkingText", "AnimatedSprite"],
-    function(Scene, SolidBackground, Text, BlinkingText, AnimatedSprite){
+define(["Scene", "SolidBackground", "Text", "BlinkingText", "AnimatedSprite", "Sprite"],
+    function(Scene, SolidBackground, Text, BlinkingText, AnimatedSprite, Sprite){
         function TitleScene(){
             var that = this;
-            this.numberOfStars = 100;
+            this.numberOfStars = 75;
             this.stars = [];
             var addStar = function() {
                 // TODO: don't hardcode size of the screen nor size of the sprite
@@ -30,6 +30,10 @@ define(["Scene", "SolidBackground", "Text", "BlinkingText", "AnimatedSprite"],
                 for (var i = 0; i < this.numberOfStars; i++) {
                     addStar();
                 };
+                var firefly = new AnimatedSprite("img/firefly-model-animated-01.png", {x: 202, y: 250} , {x:0, y:0}, /* opacity */ 1, 50, 75, /* numberOfColumns */ 2, /* speedOfAnimation*/ 1, /* randomSpriteNumber */ 0);
+                this.gameObjects.push(firefly);
+                var controlsImage = new Sprite("img/controls.png", 10, 400, /* speed */ {x:0, y:0}, /* opacity */ 1);
+                this.gameObjects.push(controlsImage);
                 // base
                 TitleScene.prototype.initialize.call(this);
             }
