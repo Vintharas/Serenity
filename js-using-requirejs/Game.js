@@ -4,7 +4,7 @@ define ([],
         function Game(){
             var game = this;
             this.scenes = [];
-            this.fps = 50;
+            this.fps = 60; // could be adjusted to something different
             this.firstLoad = true;
             this.initialize = function(){
                 // initialize scenes

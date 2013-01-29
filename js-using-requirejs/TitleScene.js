@@ -1,6 +1,6 @@
 // TitleScene.js
-define(["Scene", "SolidBackground", "Text", "BlinkingText", "Sprite"],
-    function(Scene, SolidBackground, Text, BlinkingText, Sprite){
+define(["Scene", "SolidBackground", "Text", "BlinkingText", "AnimatedSprite"],
+    function(Scene, SolidBackground, Text, BlinkingText, AnimatedSprite){
         function TitleScene(){
             var that = this;
             this.numberOfStars = 100;
@@ -11,7 +11,7 @@ define(["Scene", "SolidBackground", "Text", "BlinkingText", "Sprite"],
                 var randomY = (Math.random()*(-1600)) + 800;
                 var randomOpacity = Math.random();
                 var randomSpeedY = (randomOpacity*1.5); // far stars move slower
-                var star = new Sprite("img/star.png", randomX, randomY , {x:0, y:randomSpeedY}, randomOpacity);
+                var star = new AnimatedSprite("img/star-animated.png", {x: randomX, y: randomY} , {x:0, y:randomSpeedY}, randomOpacity, 16, 16, 8, .4);
                 that.stars.push(star);
                 that.gameObjects.push(star);
             };
