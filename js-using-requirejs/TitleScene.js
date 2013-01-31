@@ -1,8 +1,9 @@
 // TitleScene.js
 define(["Scene", "SolidBackground", "Text", "BlinkingText", "AnimatedSprite", "Sprite"],
     function(Scene, SolidBackground, Text, BlinkingText, AnimatedSprite, Sprite){
-        function TitleScene(){
+        function TitleScene(player){
             var that = this;
+            this.player = player;
             this.numberOfStars = 75;
             this.stars = [];
             var addStar = function() {
